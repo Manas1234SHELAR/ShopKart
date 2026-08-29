@@ -1,0 +1,307 @@
+/* =========================
+   TOP BAR
+   ========================= */
+
+.top-bar {
+  background-color: #021827;
+  color: white;
+  font-size: 13px;
+  padding: 7px 0;
+}
+
+.top-bar .container-fluid {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.new-badge {
+  background-color: #0ab3a6;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 7px;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  min-height: 72px;
+  background-color: white;
+  /* border-bottom: 1px solid #eeeeee; */
+  padding: 10px 0;
+}
+
+.navbar .container-fluid {
+  padding-left: 32px;
+  padding-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.shopkart-logo {
+  width: 155px;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================
+   ALL CATEGORIES
+   ========================= */
+
+.category-dropdown {
+  margin-left: 18px;
+}
+
+.category-btn {
+  height: 40px;
+  padding: 0 16px;
+  background-color: #f5f6f7;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172033;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-btn:hover {
+  background-color: #eeeeef;
+  border-color: #d5d9dd;
+}
+
+
+/* =========================
+   NAVIGATION LINKS
+   ========================= */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navbar .nav-link {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 5px !important;
+  white-space: nowrap;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #0aa89e;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-box {
+  width: 300px;
+  height: 42px;
+  border: 1px solid #e1e5e9;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+.search-btn {
+  width: 48px;
+  height: 42px;
+  border: none;
+  background-color: #0ab3a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+/* =========================
+   NAV ACTIONS
+   ========================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: 18px;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+
+/* =========================
+   CART COUNT
+   ========================= */
+
+.cart-wrapper {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #0aa89e;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   DROPDOWN
+   ========================= */
+
+.category-dropdown .dropdown-menu {
+  min-width: 210px;
+  margin-top: 8px;
+  padding: 8px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-dropdown .dropdown-item {
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #172033;
+}
+
+.category-dropdown .dropdown-item:hover {
+  background-color: #e8f8f6;
+  color: #0aa89e;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1200px) {
+
+  .shopkart-logo {
+    width: 140px;
+  }
+
+  .main-nav {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .navbar .nav-link {
+    font-size: 14px;
+  }
+
+  .search-box {
+    width: 240px;
+  }
+
+  .nav-actions {
+    gap: 15px;
+    margin-left: 12px;
+  }
+}
+
+
+@media (max-width: 991px) {
+
+  .category-dropdown {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .main-nav {
+    flex: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+    gap: 5px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .nav-actions {
+    margin-left: 0;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  .top-bar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .shopkart-logo {
+    width: 125px;
+  }
+
+  .category-btn {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}
