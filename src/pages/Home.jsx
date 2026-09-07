@@ -225,9 +225,9 @@ function Home() {
 
 
       {/* Trending Products */}
-      <section className="products-section" id="trending">
+      <section className="trending-products-section" id="trending">
 
-        <div className="section-heading">
+        <div className="trending-section-heading">
 
           <div className="trending-heading">
 
@@ -249,49 +249,60 @@ function Home() {
 
           </div>
 
-          <a href="/products" className="view-products">
+          <a href="/products" className="trending-view-products">
             View All Products <span>→</span>
           </a>
 
         </div>
 
 
-        <div className="product-grid">
+        <div className="trending-product-grid">
 
           {products.map((product) => (
 
-            <div className="product-card" key={product.id}>
+            <div
+              className="trending-product-card"
+              key={product.id}
+            >
 
-              <div className="product-image">
-                <img src={product.image} alt={product.name} />
+              <div className="trending-product-image">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                />
               </div>
 
-              <div className="product-details">
+              <div className="trending-product-details">
 
-                <div className="product-meta">
-                  <span className="product-category">
+                <div className="trending-product-meta">
+
+                  <span className="trending-product-category">
                     {product.category}
                   </span>
 
-                  <span className="product-rating">
+                  <span className="trending-product-rating">
                     ⭐ {product.rating} ({product.reviews})
                   </span>
+
                 </div>
 
                 <h3>{product.name}</h3>
 
-                <div className="product-price">
+                <div className="trending-product-price">
                   ₹{product.price}
                 </div>
 
-                <div className="product-actions">
+                <div className="trending-product-actions">
 
-                  <button className="buy-now-button">
+                  <button className="trending-buy-now-button">
                     Buy Now
                   </button>
 
-                  <button className="cart-button">
-                    <img src="/icons/product-cart.png" alt="Cart" />
+                  <button className="trending-cart-button">
+                    <img
+                      src="/icons/product-cart.png"
+                      alt="Cart"
+                    />
                   </button>
 
                 </div>
@@ -306,26 +317,8 @@ function Home() {
 
       </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </>
   );
 }
 
 export default Home;
-
