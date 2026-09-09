@@ -1,6 +1,8 @@
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ userName }) {
+  const navigate = useNavigate();
   return (
     <>
       {/* Top Shipping Bar */}
@@ -16,63 +18,13 @@ function Navbar() {
         <div className="container-fluid">
 
           {/* Logo */}
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img
               src="/images/logo.png"
               alt="ShopKart"
               className="shopkart-logo"
             />
-          </a>
-
-          {/* All Categories Dropdown */}
-          <div className="dropdown category-dropdown">
-            <button
-              className="category-btn dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              All Categories
-            </button>
-
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Electronics
-                </a>
-              </li>
-
-              <li>
-                <a className="dropdown-item" href="#">
-                  Fashion
-                </a>
-              </li>
-
-              <li>
-                <a className="dropdown-item" href="#">
-                  Home & Kitchen
-                </a>
-              </li>
-
-              <li>
-                <a className="dropdown-item" href="#">
-                  Beauty & Personal Care
-                </a>
-              </li>
-
-              <li>
-                <a className="dropdown-item" href="#">
-                  Sports & Fitness
-                </a>
-              </li>
-
-              <li>
-                <a className="dropdown-item" href="#">
-                  Books & Stationery
-                </a>
-              </li>
-            </ul>
-          </div>
+          </Link>
 
           {/* Mobile Toggle */}
           <button
@@ -89,40 +41,49 @@ function Navbar() {
             className="collapse navbar-collapse"
             id="shopKartNavbar"
           >
-
             <ul className="navbar-nav main-nav">
 
               <li className="nav-item">
-                <a className="nav-link active" href="/">
+                <NavLink className="nav-link" to="/">
                   Home
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                < NavLink className="nav-link" to="/products">Products</NavLink>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="#trending"
+                  onClick={(e) => {
+                    e.preventDefault();
+
+                    if (window.location.pathname === "/") {
+                      document.getElementById("trending")?.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      navigate("/");
+
+                      setTimeout(() => {
+                        document.getElementById("trending")?.scrollIntoView({ behavior: "smooth" });
+                      }, 100);
+                    }
+                  }}
+                >
+                  Trending 🔥
                 </a>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/products">
-                  Products
-                </a>
-              </li>
-
-               <li className="nav-item">
-                <a className="nav-link" href="#trending">
-                Trending 🔥
-                </a>
-              </li>
-
-
-             
-
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/about">
                   About Us
-                </a>
+                </NavLink>
               </li>
 
-               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contact
-                </a>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/contact">
+                  Contact </NavLink>
               </li>
 
             </ul>
@@ -135,19 +96,17 @@ function Navbar() {
               />
 
               <button className="search-btn">
-                <img src="/icons/search-icon.png" alt="Search" />
+                <img
+                  src="/icons/search-icon.png"
+                  alt="Search"
+                />
               </button>
             </div>
 
             {/* Icons */}
             <div className="nav-actions">
 
-              <img
-                src="/icons/heart.png"
-                alt="Wishlist"
-                className="nav-icon"
-              />
-
+              {/* Cart */}
               <div className="cart-wrapper">
                 <img
                   src="/icons/cart-icon.png"
@@ -155,8 +114,65 @@ function Navbar() {
                   className="nav-icon"
                 />
 
-                <span className="cart-count">3</span>
+                <span className="cart-count">
+                  3
+                </span>
               </div>
+
+              {/* Account / Greeting */}
+              {userName ? (
+                <span className="user-greeting">
+
+                  <img
+                    src="/icons/profile-icon.png"
+                    alt="Profile"
+                    className="greeting-profile-icon"
+                  />
+
+                  Hello, {userName}
+
+                </span>
+              ) : (
+                <div className="dropdown account-dropdown">
+
+                  <button
+                    className="account-btn"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-label="My Account"
+                  >
+                    <img
+                      src="/icons/profile-icon-2.png"
+                      alt="My Account"
+                      className="profile-icon"
+                    />
+                  </button>
+
+                  <ul className="dropdown-menu account-menu">
+
+                    <li>
+                      <Link
+                        className="dropdown-item"
+                        to="/login"
+                      >
+                        Login
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        className="dropdown-item"
+                        to="/register"
+                      >
+                        Register
+                      </Link>
+                    </li>
+
+                  </ul>
+
+                </div>
+              )}
 
             </div>
 

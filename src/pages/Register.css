@@ -1,0 +1,311 @@
+/* =========================================
+   REGISTER PAGE
+========================================= */
+
+.register-page {
+  min-height: calc(100vh - 1px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 70px 20px;
+  box-sizing: border-box;
+  background: #f7fafb;
+}
+
+
+/* =========================================
+   REGISTER CONTAINER
+========================================= */
+
+.register-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 35px 40px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(7, 30, 39, 0.08);
+}
+
+
+/* =========================================
+   SHOPKART LOGO
+========================================= */
+
+.register-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.register-logo img {
+  width: 190px;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================================
+   REGISTER HEADING
+========================================= */
+
+.register-container h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #102a43;
+}
+
+
+/* =========================================
+   REGISTER SUBTITLE
+========================================= */
+
+.register-subtitle {
+  margin: 8px 0 28px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.register-container .form-group {
+  margin-bottom: 20px;
+}
+
+
+/* =========================================
+   FORM LABEL
+========================================= */
+
+.register-container .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #102a43;
+}
+
+
+/* =========================================
+   FORM INPUT
+========================================= */
+
+.register-container .form-group input {
+  width: 100%;
+  height: 45px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  border: 1px solid #ccd6dd;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #102a43;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================
+   INPUT PLACEHOLDER
+========================================= */
+
+.register-container .form-group input::placeholder {
+  color: #9aa7b3;
+}
+
+
+/* =========================================
+   INPUT FOCUS
+========================================= */
+
+.register-container .form-group input:focus {
+  border-color: #009f99;
+  box-shadow: 0 0 0 3px rgba(0, 159, 153, 0.12);
+}
+
+
+/* =========================================
+   VALIDATION ERROR
+========================================= */
+
+.register-container .form-error {
+  margin: 6px 0 0;
+  color: #dc3545;
+  font-size: 12px;
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+========================================= */
+
+.register-container button {
+  width: 100%;
+  height: 45px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 7px;
+  background: #009f99;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================
+   REGISTER BUTTON HOVER
+========================================= */
+
+.register-container button:hover {
+  background: #008f89;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(0, 159, 153, 0.25);
+}
+
+
+/* =========================================
+   LOGIN TEXT
+========================================= */
+
+.login-text {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.login-text a {
+  margin-left: 4px;
+  color: #009f99;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   TABLET — 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+  .register-page {
+    padding: 55px 20px;
+  }
+
+  .register-container {
+    max-width: 420px;
+    padding: 32px 30px;
+  }
+
+  .register-logo img {
+    width: 175px;
+  }
+
+  .register-container h2 {
+    font-size: 26px;
+  }
+}
+
+
+/* =========================================
+   MOBILE — 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+  .register-page {
+    padding: 35px 15px;
+  }
+
+  .register-container {
+    max-width: 100%;
+    padding: 28px 22px;
+    border-radius: 12px;
+  }
+
+  .register-logo {
+    margin-bottom: 17px;
+  }
+
+  .register-logo img {
+    width: 155px;
+  }
+
+  .register-container h2 {
+    font-size: 23px;
+  }
+
+  .register-subtitle {
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+
+  .register-container .form-group {
+    margin-bottom: 17px;
+  }
+
+  .register-container .form-group label {
+    font-size: 13px;
+  }
+
+  .register-container .form-group input {
+    height: 43px;
+    font-size: 13px;
+  }
+
+  .register-container button {
+    height: 43px;
+    font-size: 14px;
+  }
+
+  .login-text {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   EXTRA SMALL — 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+  .register-page {
+    padding: 25px 12px;
+  }
+
+  .register-container {
+    padding: 25px 18px;
+  }
+
+  .register-logo img {
+    width: 140px;
+  }
+
+  .register-container h2 {
+    font-size: 21px;
+  }
+
+  .register-subtitle {
+    font-size: 12px;
+  }
+}

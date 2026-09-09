@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import "./Home.css";
-
+import { useNavigate } from "react-router-dom";
 
 
 const products = [
@@ -88,10 +88,13 @@ const products = [
 ];
 
 
-function Home() {
+
+function Home({ userName }) {
+
+  const navigate = useNavigate();
+  
   return (
     <>
-      <Navbar />
 
       {/* Hero Section */}
       <section className="hero-section">
@@ -109,7 +112,9 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <button className="shop-btn">Shop Now →</button>
+            <button className="shop-btn" onClick={() => navigate("/products")}>
+              Shop Now →
+            </button>
             <button className="deal-btn">Explore Deals</button>
           </div>
 
