@@ -1,8 +1,15 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar({ userName }) {
+function Navbar({ userName, cart = [] }) {
   const navigate = useNavigate();
+
+  const cartCount = cart.reduce(
+    (total, item) =>
+      total + item.quantity,
+    0
+  );
+
   return (
     <>
       {/* Top Shipping Bar */}
@@ -108,16 +115,23 @@ function Navbar({ userName }) {
 
               {/* Cart */}
               <div className="cart-wrapper">
-                <img
-                  src="/icons/cart-icon.png"
-                  alt="Cart"
-                  className="nav-icon"
-                />
+                <Link
+                  to="/cart"
+                  className="cart-wrapper"
+                >
 
-                <span className="cart-count">
-                  3
-                </span>
+                  <img
+                    src="/icons/cart-icon.png"
+                    alt="Cart"
+                    className="nav-icon"
+                  />
+
+                  <span className="cart-count">
+                    {cartCount}
+                  </span>
+                </Link>
               </div>
+
 
               {/* Account / Greeting */}
               {userName ? (
