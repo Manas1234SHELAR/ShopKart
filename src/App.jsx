@@ -6,6 +6,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Cart from "./pages/Cart";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -124,7 +127,14 @@ function App() {
           path="/cart"
           element={<Cart cart={cart} dispatch={dispatch} />}
         />
+
+         <Route path="/about" element={<About />} />
+
+        <Route path="/contact" element={<Contact />} />
+        
       </Routes>
+
+       <Footer/>
     </>
   );
 }

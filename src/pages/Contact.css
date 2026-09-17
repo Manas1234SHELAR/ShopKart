@@ -1,0 +1,916 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* ========================================
+   CONTACT PAGE
+======================================== */
+
+.contact-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  margin: 0;
+  padding: 50px 5%;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Inter", sans-serif;
+}
+
+
+/* ========================================
+   CONTACT WRAPPER
+======================================== */
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 1250px;
+  min-height: 720px;
+
+  display: grid;
+  grid-template-columns: 38% 62%;
+
+  background: #ffffff;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  box-shadow: 0 12px 40px rgba(30, 45, 65, 0.08);
+}
+
+
+/* ========================================
+   LEFT CONTACT INFORMATION
+======================================== */
+
+.contact-info {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 50px 50px 35px;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========================================
+   INFORMATION BLOCK
+======================================== */
+
+.info-block {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+
+  margin-bottom: 42px;
+}
+
+
+/* ========================================
+   INFORMATION ICON BOX
+======================================== */
+
+.info-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  min-width: 42px !important;
+  min-height: 42px !important;
+
+  max-width: 42px !important;
+  max-height: 42px !important;
+
+  flex: 0 0 42px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid #e0e0e0;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   CONTACT ICON IMAGE
+======================================== */
+
+.info-icon img {
+  width: 20px !important;
+  height: 20px !important;
+
+  min-width: 20px !important;
+  min-height: 20px !important;
+
+  max-width: 20px !important;
+  max-height: 20px !important;
+
+  display: block !important;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0;
+
+}
+
+
+/* ========================================
+   INFORMATION CONTENT
+======================================== */
+
+.info-block > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+
+.info-block h3 {
+  margin: 1px 0 6px;
+
+  color: #021827;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+.info-block p {
+  margin: 0 0 10px;
+
+  color: #626b78;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+
+.info-block strong {
+  color: #021827;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.55;
+}
+
+
+/* ========================================
+   MAP
+======================================== */
+
+.map-section {
+  width: 100%;
+  height: 170px;
+
+  margin-top: 2px;
+  margin-bottom: 35px;
+
+  overflow: hidden;
+
+  border: 1px solid #e3e3e3;
+
+  border-radius: 12px;
+
+  background: #f5f5f5;
+}
+
+
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+
+/* ========================================
+   SOCIAL SECTION
+======================================== */
+
+.social-section {
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+
+.social-section h3 {
+  margin: 0 0 15px;
+
+  color: #021827;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* ========================================
+   SOCIAL ICONS CONTAINER
+======================================== */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* ========================================
+   SOCIAL ICON BOX
+======================================== */
+
+.social-icons span {
+  width: 37px !important;
+  height: 37px !important;
+
+  min-width: 37px !important;
+  min-height: 37px !important;
+
+  max-width: 37px !important;
+  max-height: 37px !important;
+
+  flex: 0 0 37px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid #dedede;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* ========================================
+   SOCIAL PNG ICON
+======================================== */
+
+.social-icons span img {
+  width: 17px !important;
+  height: 17px !important;
+
+  min-width: 17px !important;
+  min-height: 17px !important;
+
+  max-width: 17px !important;
+  max-height: 17px !important;
+
+  display: block !important;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0;
+
+  transition: filter 0.2s ease;
+}
+
+
+/* ========================================
+   SOCIAL HOVER
+======================================== */
+
+.social-icons span:hover {
+  background: #021827;
+
+  border-color: #021827;
+
+  transform: translateY(-2px);
+}
+
+
+
+.social-icons span:hover img {
+  filter: brightness(0) invert(1);
+}
+
+
+/* ========================================
+   RIGHT FORM SECTION
+======================================== */
+
+.contact-form-section {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 48px 55px;
+
+  background: #00D9C6;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* ========================================
+   FORM CONTENT
+======================================== */
+
+.form-content {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   FORM HEADING
+======================================== */
+
+.form-content h1 {
+  margin: 0 0 17px;
+
+  color: #021827;
+
+  font-size: clamp(40px, 3.4vw, 53px);
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+.form-content h1 span {
+  color: #ffffff;
+}
+
+
+/* ========================================
+   FORM INTRO
+======================================== */
+
+.form-intro {
+  margin: 0 0 32px;
+
+  color: #021827;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   FORM FIELD
+======================================== */
+
+.form-field {
+  position: relative;
+
+  margin-bottom: 19px;
+}
+
+
+.form-field label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #021827;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   INPUT / SELECT / TEXTAREA
+======================================== */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-bottom: 1.5px solid #021827;
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #021827;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   INPUT + SELECT
+======================================== */
+
+.form-field input,
+.form-field select {
+  height: 35px;
+
+  padding: 4px 0;
+}
+
+
+/* ========================================
+   TEXTAREA
+======================================== */
+
+.form-field textarea {
+  height: 50px;
+
+  padding: 5px 0;
+
+  resize: none;
+}
+
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #16413d;
+
+  opacity: 0.8;
+
+  font-family: "Inter", sans-serif;
+}
+
+
+/* ========================================
+   SELECT
+======================================== */
+
+.form-field select {
+  cursor: pointer;
+
+  appearance: none;
+
+  padding-right: 25px;
+}
+
+
+/* ========================================
+   SELECT ARROW
+======================================== */
+
+.form-field:has(select)::after {
+  content: "⌄";
+
+  position: absolute;
+
+  right: 3px;
+  bottom: 7px;
+
+  color: #021827;
+
+  font-size: 17px;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   FORM FOCUS
+======================================== */
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-bottom-color: #ffffff;
+}
+
+
+/* ========================================
+   CHARACTER COUNT
+======================================== */
+
+.character-count {
+  position: absolute;
+
+  right: 0;
+  bottom: 6px;
+
+  color: #16413d;
+
+  font-size: 9px;
+  font-weight: 400;
+}
+
+
+/* ========================================
+   HELP SECTION
+======================================== */
+
+.help-section {
+  margin-top: 5px;
+  margin-bottom: 22px;
+}
+
+
+.help-section > p {
+  margin: 0 0 13px;
+
+  color: #021827;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.help-section > p span {
+  font-weight: 400;
+}
+
+
+/* ========================================
+   HELP OPTIONS
+======================================== */
+
+.help-options {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 30px;
+
+  row-gap: 10px;
+}
+
+
+.help-options label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #021827;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+
+.help-options input {
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: #021827;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+.contact-submit {
+  margin-top: 50px;
+  width: 100%;
+  height: 47px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #021827;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  transition: all 0.2s ease;
+}
+
+
+.contact-submit span {
+  font-size: 18px;
+}
+
+
+.contact-submit:hover {
+  background: #062b3c;
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   SUCCESS MESSAGE
+======================================== */
+
+.success-message {
+  margin: 10px 0 0;
+
+  text-align: center;
+
+  color: #021827;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1500px) {
+
+  .contact-page {
+    padding: 55px 6%;
+  }
+
+  .contact-wrapper {
+    max-width: 1320px;
+
+    min-height: 750px;
+  }
+
+  .contact-info {
+    padding: 60px 55px 40px;
+  }
+
+  .contact-form-section {
+    padding: 55px 60px;
+  }
+
+  .map-section {
+    height: 180px;
+  }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .contact-page {
+    padding: 35px 25px;
+  }
+
+  .contact-wrapper {
+    max-width: 720px;
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    border-radius: 22px;
+  }
+
+  .contact-info {
+    padding: 40px;
+  }
+
+  .info-block {
+    margin-bottom: 30px;
+  }
+
+  .map-section {
+    height: 200px;
+
+    margin-bottom: 30px;
+  }
+
+  .social-section {
+    margin-top: 10px;
+  }
+
+  .contact-form-section {
+    padding: 45px 40px;
+  }
+
+  .form-content h1 {
+    font-size: 42px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .contact-page {
+    padding: 20px 12px;
+  }
+
+  .contact-wrapper {
+    border-radius: 18px;
+  }
+
+  .contact-info {
+    padding: 32px 25px;
+  }
+
+  .info-block {
+    margin-bottom: 28px;
+
+    gap: 13px;
+  }
+
+  .info-icon {
+    width: 40px !important;
+    height: 40px !important;
+
+    min-width: 40px !important;
+    min-height: 40px !important;
+
+    max-width: 40px !important;
+    max-height: 40px !important;
+
+    flex-basis: 40px;
+  }
+
+  .info-icon img {
+    width: 18px !important;
+    height: 18px !important;
+
+    min-width: 18px !important;
+    min-height: 18px !important;
+
+    max-width: 18px !important;
+    max-height: 18px !important;
+  }
+
+  .map-section {
+    height: 180px;
+
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+
+  .social-icons span {
+    width: 36px !important;
+    height: 36px !important;
+
+    min-width: 36px !important;
+    min-height: 36px !important;
+
+    max-width: 36px !important;
+    max-height: 36px !important;
+
+    flex-basis: 36px;
+  }
+
+  .social-icons span img {
+    width: 16px !important;
+    height: 16px !important;
+
+    min-width: 16px !important;
+    min-height: 16px !important;
+
+    max-width: 16px !important;
+    max-height: 16px !important;
+  }
+
+  .contact-form-section {
+    padding: 35px 25px;
+  }
+
+  .form-content h1 {
+    font-size: 34px;
+
+    letter-spacing: -1px;
+  }
+
+  .form-intro {
+    font-size: 13px;
+
+    margin-bottom: 28px;
+  }
+
+  .help-options {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .contact-page {
+    padding: 15px 10px;
+  }
+
+  .contact-info {
+    padding: 27px 20px;
+  }
+
+  .info-block {
+    gap: 12px;
+  }
+
+  .info-block h3 {
+    font-size: 16px;
+  }
+
+  .info-block p,
+  .info-block strong {
+    font-size: 12px;
+  }
+
+  .map-section {
+    height: 160px;
+  }
+
+  .contact-form-section {
+    padding: 30px 20px;
+  }
+
+  .form-content h1 {
+    font-size: 30px;
+  }
+}
