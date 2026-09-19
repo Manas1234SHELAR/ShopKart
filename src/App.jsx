@@ -9,6 +9,8 @@ import Cart from "./pages/Cart";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import ProductDetails from "./pages/ProductDetails";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -49,9 +51,9 @@ function App() {
           return state.map((item) =>
             item.id === action.payload.id
               ? {
-                  ...item,
-                  quantity: item.quantity + 1
-                }
+                ...item,
+                quantity: item.quantity + 1
+              }
               : item
           );
         }
@@ -69,9 +71,9 @@ function App() {
         return state.map((item) =>
           item.id === action.payload
             ? {
-                ...item,
-                quantity: item.quantity + 1
-              }
+              ...item,
+              quantity: item.quantity + 1
+            }
             : item
         );
 
@@ -80,9 +82,9 @@ function App() {
           .map((item) =>
             item.id === action.payload
               ? {
-                  ...item,
-                  quantity: item.quantity - 1
-                }
+                ...item,
+                quantity: item.quantity - 1
+              }
               : item
           )
           .filter((item) => item.quantity > 0);
@@ -105,12 +107,20 @@ function App() {
     <>
       <Navbar userName={userName} cart={cart} />
 
+<div className="page-content">
       <Routes>
         <Route path="/" element={<Home userName={userName} />} />
 
         <Route
           path="/products"
           element={<Products dispatch={dispatch} />}
+        />
+
+        <Route
+          path="/products/:id"
+          element={
+            <ProductDetails dispatch={dispatch} />
+          }
         />
 
         <Route
@@ -123,18 +133,18 @@ function App() {
           element={<Register setUserName={setUserName} />}
         />
 
-        <Route
-          path="/cart"
-          element={<Cart cart={cart} dispatch={dispatch} />}
-        />
+        <Route path="/cart" element={<Cart cart={cart} dispatch={dispatch} />} />
 
-         <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="/contact" element={<Contact />} />
-        
-      </Routes>
 
-       <Footer/>
+        <Route path="*" element={<NotFound />} />
+
+      </Routes>
+      </div>
+
+      <Footer />
     </>
   );
 }

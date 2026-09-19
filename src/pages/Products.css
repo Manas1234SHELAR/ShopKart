@@ -1576,3 +1576,11 @@
 
 
 
+
+
+.product-image,
+.product-info {
+  cursor: pointer;
+}
+
+

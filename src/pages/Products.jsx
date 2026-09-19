@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Products.css";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -154,6 +155,7 @@ function Products({ dispatch }) {
   const [selectedRating, setSelectedRating] = useState(0);
   const [availability, setAvailability] = useState("");
   const [addedProductId, setAddedProductId] = useState(null);
+  const navigate = useNavigate();
 
   const handleCategoryChange = (category) => {
     if (selectedCategories.includes(category)) {
@@ -302,21 +304,41 @@ function Products({ dispatch }) {
             <div className="products-grid">
               {filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
-                  <div className="product-card" key={product.id}>
-                    <div className="product-image">
-                      {product.discount && <span className="discount-badge">-{product.discount}</span>}
+                  <div className="product-card" key={product.id} title="Click for more info">
+                    <div
+                      className="product-image"
+                      onClick={() => navigate(`/products/${product.id}`)}
+                    >
+                      {product.discount && (
+                        <span className="discount-badge">
+                          -{product.discount}
+                        </span>
+                      )}
 
-                      <button className="wishlist-button">♡</button>
+                      <button
+                        className="wishlist-button"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        ♡
+                      </button>
 
-                      <img src={product.image} alt={product.name} />
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                      />
                     </div>
 
-                    <div className="product-info">
+                    <div
+                      className="product-info"
+                      onClick={() => navigate(`/products/${product.id}`)}
+                    >
                       <small>{product.category}</small>
+
                       <h3>{product.name}</h3>
 
                       <div className="rating">
-                        ⭐ {product.rating} <span>({product.reviews})</span>
+                        ⭐ {product.rating}
+                        <span>({product.reviews})</span>
                       </div>
 
                       <div className="product-price">
@@ -326,8 +348,14 @@ function Products({ dispatch }) {
 
                       <button
                         className="add-cart-button"
-                        onClick={() => {
-                          dispatch({ type: "ADD_ITEM", payload: product });
+                        onClick={(e) => {
+                          e.stopPropagation();
+
+                          dispatch({
+                            type: "ADD_ITEM",
+                            payload: product
+                          });
+
                           setAddedProductId(product.id);
 
                           setTimeout(() => {
@@ -335,7 +363,9 @@ function Products({ dispatch }) {
                           }, 2000);
                         }}
                       >
-                        {addedProductId === product.id ? <>✓ Added to Cart</> : <>🛒 Add to Cart</>}
+                        {addedProductId === product.id
+                          ? <>✓ Added to Cart</>
+                          : <>🛒 Add to Cart</>}
                       </button>
                     </div>
                   </div>
