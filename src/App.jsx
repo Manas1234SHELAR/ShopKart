@@ -111,27 +111,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home userName={userName} />} />
 
-        <Route
-          path="/products"
+        <Route path="/products"
           element={<Products dispatch={dispatch} />}
         />
 
-        <Route
-          path="/products/:id"
+        <Route path="/products/:id"
           element={
             <ProductDetails dispatch={dispatch} />
-          }
-        />
+          }/>
 
-        <Route
-          path="/login"
-          element={<Login setUserName={setUserName} />}
-        />
+        <Route path="/login" element={<Login setUserName={setUserName} />}  />
 
-        <Route
-          path="/register"
-          element={<Register setUserName={setUserName} />}
-        />
+        <Route path="/register" element={<Register setUserName={setUserName} />}/>
 
         <Route path="/cart" element={<Cart cart={cart} dispatch={dispatch} />} />
 
@@ -141,7 +132,8 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
 
-      </Routes>
+      </Routes> 
+
       </div>
 
       <Footer />

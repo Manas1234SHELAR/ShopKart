@@ -78,7 +78,7 @@ function Navbar({ userName, cart = [] }) {
                     }
                   }}
                 >
-                  Trending 🔥
+                  Trending 
                 </a>
               </li>
 
