@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import { ShopKartContext } from "../context/ShopkartContext";
 
 
 const products = [
@@ -89,7 +90,9 @@ const products = [
 
 
 
-function Home({ userName }) {
+function Home() {
+
+  const { userName } = useContext(ShopKartContext);
 
   const navigate = useNavigate();
   
@@ -201,10 +204,7 @@ function Home({ userName }) {
 
 
           <div className="category-card sports">
-            <img
-              src="/images/category-fitness.png"
-              alt="Sports & Fitness"
-            />
+            <img src="/images/category-fitness.png" alt="Sports & Fitness" />
 
             <h3>Sports & Fitness</h3>
             <p>600+ Products</p>
@@ -212,10 +212,7 @@ function Home({ userName }) {
 
 
           <div className="category-card books">
-            <img
-              src="/images/category-books.png"
-              alt="Books & Stationery"
-            />
+            <img  src="/images/category-books.png" alt="Books & Stationery"/>
 
             <h3>Books & Stationery</h3>
             <p>500+ Products</p>
@@ -224,8 +221,6 @@ function Home({ userName }) {
         </div>
 
       </section>
-
-
 
 
 

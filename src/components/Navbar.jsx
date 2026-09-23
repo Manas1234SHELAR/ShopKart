@@ -1,8 +1,15 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
+import { useContext } from "react";
+import { ShopKartContext } from "../context/ShopkartContext";
 
-function Navbar({ userName, cart = [] }) {
+function Navbar() {
+
+const { userName, cart } = useContext(ShopKartContext);
+
   const navigate = useNavigate();
+
+
 
   const cartCount = cart.reduce(
     (total, item) =>
@@ -120,8 +127,14 @@ function Navbar({ userName, cart = [] }) {
                   className="cart-wrapper"
                 >
 
-                  <img
+                  {/* <img
                     src="/icons/cart-icon.png"
+                    alt="Cart"
+                    className="nav-icon"
+                  /> */}
+
+                    <img
+                    src="/icons/shopping-cart.gif"
                     alt="Cart"
                     className="nav-icon"
                   />

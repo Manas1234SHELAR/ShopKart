@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Cart.css";
+import { ShopKartContext } from "../context/ShopkartContext";
 
-function Cart({ cart, dispatch }) {
+function Cart() {
+
+
+  const { cart, dispatch } = useContext(ShopKartContext);
+
 
   const [orderPlaced, setOrderPlaced] =
     useState(false);

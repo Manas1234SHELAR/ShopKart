@@ -1,155 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Products.css";
 import { useNavigate } from "react-router-dom";
+import { ShopKartContext } from "../context/ShopkartContext";
 
-const products = [
-  {
-    id: 1,
-    name: "Samsung Galaxy M14 5G",
-    category: "Electronics",
-    price: "12,499",
-    originalPrice: "14,999",
-    rating: 4.4,
-    reviews: 1850,
-    discount: "17%",
-    isAvailable: true,
-    image: "/images/products/Samsung_phone.png"
-  },
-  {
-    id: 2,
-    name: "Puma Running Shoes",
-    category: "Fashion",
-    price: "2,499",
-    originalPrice: "3,999",
-    rating: 3.8,
-    reviews: 1320,
-    discount: "38%",
-    isAvailable: true,
-    image: "/images/products/puma_shoes.png"
-  },
-  {
-    id: 3,
-    name: "Amazon Echo Dot",
-    category: "Electronics",
-    price: "3,499",
-    originalPrice: "4,499",
-    rating: 4.6,
-    reviews: 2450,
-    discount: "22%",
-    isAvailable: true,
-    image: "/images/products/amazon_echo_dot.png"
-  },
-  {
-    id: 4,
-    name: "American Tourister Trolley Bag",
-    category: "Fashion",
-    price: "3,299",
-    originalPrice: "4,999",
-    rating: 2.9,
-    reviews: 970,
-    discount: "34%",
-    isAvailable: false,
-    image: "/images/products/trolley-bag..png"
-  },
-  {
-    id: 5,
-    name: "HP Wireless Keyboard",
-    category: "Electronics",
-    price: "899",
-    originalPrice: "1,299",
-    rating: 4.2,
-    reviews: 760,
-    discount: "31%",
-    isAvailable: true,
-    image: "/images/products/keyboard.png"
-  },
-  {
-    id: 6,
-    name: "Milton Thermosteel Bottle",
-    category: "Home & Kitchen",
-    price: "799",
-    originalPrice: "1,099",
-    rating: 3.5,
-    reviews: 1540,
-    discount: "27%",
-    isAvailable: true,
-    image: "/images/products/thermos-bottle.png"
-  },
-  {
-    id: 7,
-    name: "Maybelline Lipstick Set",
-    category: "Beauty",
-    price: "399",
-    originalPrice: "749",
-    rating: 5,
-    reviews: 820,
-    discount: "22%",
-    isAvailable: true,
-    image: "/images/products/lipstick-set.png"
-  },
-  {
-    id: 8,
-    name: "Levi's Casual Jeans",
-    category: "Fashion",
-    price: "1,899",
-    originalPrice: "2,999",
-    rating: 4.6,
-    reviews: 2100,
-    discount: "37%",
-    isAvailable: true,
-    image: "/images/products/jeans-1.png"
-  },
-  {
-    id: 9,
-    name: "Bajaj Mixer Grinder",
-    category: "Home & Kitchen",
-    price: "2,799",
-    originalPrice: "3,499",
-    rating: 2.4,
-    reviews: 690,
-    discount: "20%",
-    isAvailable: false,
-    image: "/images/products/mixer-grinder.png"
-  },
-  {
-    id: 10,
-    name: "Canon Inkjet Printer",
-    category: "Electronics",
-    price: "5,499",
-    originalPrice: "6,499",
-    rating: 3.2,
-    reviews: 540,
-    discount: "15%",
-    isAvailable: true,
-    image: "/images/products/printer.png"
-  },
-  {
-    id: 11,
-    name: "Nivea Skincare Combo",
-    category: "Beauty",
-    price: "599",
-    originalPrice: "799",
-    rating: 4.5,
-    reviews: 1280,
-    discount: "25%",
-    isAvailable: true,
-    image: "/images/products/skincare-combo.png"
-  },
-  {
-    id: 12,
-    name: "Cello Non-Stick Pan",
-    category: "Home & Kitchen",
-    price: "999",
-    originalPrice: "1,399",
-    rating: 2.8,
-    reviews: 475,
-    discount: "29%",
-    isAvailable: true,
-    image: "/images/products/nonstick-pan.png"
-  }
-];
 
-function Products({ dispatch }) {
+
+function Products() {
+
+
+   const {  products, dispatch, loading, error } = useContext(ShopKartContext);
+
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [maxPrice, setMaxPrice] = useState(20000);
   const [selectedRating, setSelectedRating] = useState(0);
@@ -260,6 +120,34 @@ function Products({ dispatch }) {
   useEffect(() => { setCurrentPage(1);}, [sortOption]);
 
   useEffect(() => {setCurrentPage(1);}, [selectedCategories,maxPrice,selectedRating,availability]);
+
+
+
+
+// ====================== Loading and Error UI =========================================
+ 
+if (loading) {
+  return (
+    <div className="loading-message">
+      <div className="loading-spinner"></div>
+      <h2>Loading Products</h2>
+      <p>Please wait while we fetch the latest products...</p>
+    </div>
+  );
+}
+
+if (error) {
+  return (
+    <div className="error-message">
+      <div className="error-icon">!</div>
+      <h2>Oops! Something went wrong</h2>
+      <p>{error}</p>
+      <button onClick={() => window.location.reload()}>
+        Try Again
+      </button>
+    </div>
+  );
+}
 
 
 

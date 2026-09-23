@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { ShopKartContext } from "../context/ShopkartContext";
 
-function Login({ setUserName }) {
+function Login() {
+
+  const { setUserName } = useContext(ShopKartContext);
+
 
   const navigate = useNavigate();
 

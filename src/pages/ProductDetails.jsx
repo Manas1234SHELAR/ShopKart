@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import productDetails from "../data/productDetails";
+// import productDetails from "../data/productDetails";
 import "./ProductDetails.css";
+import { ShopKartContext } from "../context/ShopkartContext";
 
 
-function ProductDetails({ dispatch }) {
+function ProductDetails() {
+
+   const { dispatch, productDetails } = useContext(ShopKartContext);
 
   const { id } = useParams();
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
 
   const product = productDetails.find(
-    (item) => item.id === Number(id)
+    (item) =>
+      (item.id) === Number(id)
   );
 
   if (!product) {
@@ -158,7 +162,7 @@ function ProductDetails({ dispatch }) {
       <section className="product-reviews-section">
 
         <h2>Customer Reviews</h2>
-        
+
         <div className="reviews-list">
           {product.customerReviews.map((review, index) => (
             <article className="review-card" key={index}>
